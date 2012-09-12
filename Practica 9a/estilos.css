@@ -1,0 +1,56 @@
+
+body {
+	background-image: url(img/light-wooden-background.jpg);
+	background-attachment: fixed;
+	}
+
+header { 
+	 background: url(img/wood.jpg) repeat-x;
+	 font-size: 3em;
+	 font-weight: bold;
+	 font-family: Helvetica, Verdana, Arial;
+	 text-align: center;
+	 color: white;
+	 border-style: solid;
+	 border: 10px solid black;
+	}
+
+h1 {
+	margin: 20px;
+	padding: 20px;
+
+	}
+
+a {
+	background-image: url(img/solid.jpg);
+	padding: 5px;
+}
+
+#navigator {
+		margin: 10px;
+		border-style: ridge;
+		border-width: 5px;
+}
+
+.list {
+	padding-left: 1em;
+	margin: 5px;
+	font-weight: bold;
+}
+
+.artic {
+		font-family: Arial, Verdana;
+}
+
+#sidebar {
+		font-weight: bold;
+		font-size: 2em;
+		float: right;
+}
+
+#footer {
+		text-align: center;
+		font-weight: bold;		
+}
+
+

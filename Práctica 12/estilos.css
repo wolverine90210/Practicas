@@ -1,0 +1,13 @@
+.div_error{
+	background-color: #FFFF99;
+	moz-border-radius: 4px;
+	webkit-border-radius: 4px;
+	color: red;
+	font-weight: bold;
+	font-size: 1em;
+	border-style: solid;
+	margin-top: 20px;
+	padding-left: 10px;
+	display: none;
+}
+

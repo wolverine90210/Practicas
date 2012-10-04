@@ -71,15 +71,14 @@ function validaEnvio(){
 		
 		expresion = new RegExp(/^[0-9]{2,3}-? ?[0-9]{6,7}$/);
 		
-		if(!expresion.test(document.form2.telefono.value) || document.form2.telefono.value.length == 0){
+		if(!expresion.test(document.form2.telefono1.value) || document.form2.telefono1.value.length == 0){
 			//alert("Introduzca un tel\u00e9fono v\u00e1lido!");
 			document.getElementById("error_tel").style.display='block';
-			document.form2.telefono.focus();
+			document.form2.telefono1.focus();
 			return 0;
 		}
 		
 
-		
 		
 		if(document.form2.fecha.value.length == 0){
 			//alert("Introduzca una fecha de nacimiento!");
@@ -107,22 +106,34 @@ var i = 1;
 
 function otherTel(){
 
+	var tStrong = document.createElement("strong");
+	var tLabel = document.createElement("label");
+	
+	var text = document.createTextNode("Otro teléfono: ");
+
+	tLabel.appendChild(text);
+	tStrong.appendChild(tLabel);
+	
 	var tField = document.createElement("input");
 
 	tField.type = "tel";
 	i++;
 	tField.id = "telefono"+i;
+	tLabel.for = "otro_tel"+i;
+	tStrong.id = "lTelefono"+i;
 	tField.name = "otro_telefono";
 	tField.placeholder = "Escriba otro teléfono";
-	tField.style.marginLeft = "80px";
+	tField.required = "required";
 
 	var tel = document.getElementById("telefono1");
 
 	var br = document.createElement("br");
 
-	tel.parentNode.insertBefore(br, document.getElementById("otro_tel"));
+	//tel.parentNode.insertBefore(br, document.getElementById("lTelefono"+i));
 
 	tel.parentNode.insertBefore(tField, document.getElementById("otro_tel"));
+	tel.parentNode.insertBefore(tStrong, document.getElementById("telefono"+i));
+	tel.parentNode.insertBefore(br, document.getElementById("lTelefono"+i));
 
 	var button = document.createElement("input");
 
@@ -146,6 +157,7 @@ function deleteField(){
 	//tel.parentNode.removeChild(tel);
 	
 	var bDelete = document.getElementById("delete");
+	bDelete.parentNode.removeChild(bDelete.previousSibling);
 	bDelete.parentNode.removeChild(bDelete.previousSibling);
 	bDelete.parentNode.removeChild(bDelete.previousSibling);
 	

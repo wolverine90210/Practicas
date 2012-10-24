@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<script type="text/javascript" src="jsFormP5Val.js"></script>
+
+	<meta charset="UTF-8" />
+	<meta name="description" content="Practica 10 - Validación de Formulario P5" />
+	<meta name="keywords" content="usuario, correo, contraseña" />
+	<meta name="author" content="Iván Antonio Corona Zárate" />
+	<meta http-equiv="refresh" content="300" />
+	
+	<title>Formulario de creación de usuario</title>
+	
+</head>
+<body>
+
+<h1>REGISTRO DE USUARIO</h1>
+
+<p>Cree su cuenta llenando este formulario con los datos que le solicitamos y pulsando el botón [Enviar].</p>
+
+<fieldset>
+<form name="form1" method="post" action="successful.html">
+
+<br />
+<strong><label for="username">Nombre de usuario: </label></strong>
+<input type="text" id="username" name="username" placeholder="Escriba su nombre de usuario" required />
+
+<br /><br />
+<strong><label for="email">Correo electrónico: </label></strong>
+<input type="email" id="email" name="email" placeholder="Escriba su e-mail" required />
+
+<br /><br />
+<strong><label for="password">Contraseña: </label></strong>
+<input type="password" id="password" name="password" placeholder="Escriba su contraseña" required />
+
+<br /><br />
+<strong><label for="pconfirm">Confirmar contraseña: </label></strong>
+<input type="password" id="pconfirm" name="pconfirm" placeholder="Confirme su contraseña" required />
+
+<br />
+<br />
+
+<input type="button" value="Enviar" onclick="validaEnvio()" />
+<button type="reset">Limpiar</button>
+
+</form>
+</fieldset>
+
+</body>
+</html>

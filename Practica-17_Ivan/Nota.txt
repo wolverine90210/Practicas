@@ -1,0 +1,14 @@
+Para enviar correos usé PHPMailer y el host alanturing.cucei.udg.mx que
+sí permite usar el SMTP; adjunté dos imágenes como evidencia de que sí
+recibía los correos con formato y todo de los datos de los formularios.
+
+Links de la práctica:
+
+*Práctica de Registro de Usuario:
+
+http://alanturing.cucei.udg.mx/equipo-alpha/Practica-17_Ivan/practica5-17.html
+
+
+*Práctica de Contacto de Usuario:
+
+http://alanturing.cucei.udg.mx/equipo-alpha/Practica-17_Ivan/practica4-17.html

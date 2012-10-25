@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="description" content="Practica 17 - Envío de correos" />
+	<meta name="keywords" content="nombre, email, telefeono, estado, intereses, comentarios" />
+	<meta name="author" content="Ivan Antonio Corona Zarate" />
+	<meta http-equiv="refresh" content="300" />
+	<meta charset="UTF-8" />
+	
+	<title>Página de contacto</title>
+	
+</head>
+<body>
+
+<h1>PÁGINA DE CONTACTO</h1>
+
+<p>Si desea ponerse en contacto con nosotros puede hacerlo rellenando este formulario con los datos que le solicitamos y pulsando el botón [Enviar].</p>
+
+<form method="POST" action="sendEmailContacto.php">
+<br />
+
+<label for="nombre">Nombre: </label>
+<input type="text" id="nombre" name="nombre" required="required" placeholder="Escriba su nombre" />
+
+<br /><br />
+
+<label for="email">E-mail: </label>
+<input type="email" id="email" name="email" required="required" placeholder="Escriba su e-mail" />
+
+<br /><br />
+
+<label for="telefono">Teléfono: </label>
+<input type="tel" id="telefono" name="telefono" required="required" placeholder="Escriba su teléfono" />
+
+<br /><br />
+
+<select name="estados">
+
+<option selected value="0"> Elige un estado </option>
+<option value="Distrito Federal">Distrito Federal</option>
+<option value="Aguascalientes">Aguascalientes</option>
+<option value="Baja California">Baja California</option>
+<option value="Baja California Sur">Baja California Sur</option>
+<option value="Campeche">Campeche</option>
+<option value="Chiapas">Chiapas</option>
+<option value="Chihuahua">Chihuahua</option>
+<option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+<option value="Colima">Colima</option>
+<option value="Durango">Durango</option>
+<option value="Guanajuato">Guanajuato</option>
+<option value="Guerrero">Guerrero</option>
+<option value="Estado de Hidalgo">Estado de Hidalgo</option>
+<option value="Jalisco">Jalisco</option>
+<option value="Estado de México">Estado de México</option>
+<option value="Michoacan de Ocampo">Michoacán de Ocampo</option>
+<option value="Morelos">Morelos</option>
+<option value="Nayarit">Nayarit</option>
+<option value="Nuevo Leon">Nuevo León</option>
+<option value="Oaxaca">Oaxaca</option>
+<option value="Puebla">Puebla</option>
+<option value="Queretaro">Querétaro</option>
+<option value="Quintana Roo">Quintana Roo</option>
+<option value="San Luis Potosi">San Luis Potosí</option>
+<option value="Sinaloa">Sinaloa</option>
+<option value="Sonora">Sonora</option>
+<option value="Tabasco">Tabasco</option>
+<option value="Tamaulipas">Tamaulipas</option>
+<option value="Tlaxcala">Tlaxcala</option>
+<option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
+<option value="Yucatan">Yucatán</option>
+<option value="Zacatecas">Zacatecas</option>
+	
+</select>
+
+<br /><br />
+
+<label for="colonia">Colonia: </label>
+<input type="text" id="colonia" name="colonia" required="required" placeholder="Escriba su colonia" />
+
+<br /><br />
+
+<fieldset>
+<legend>Intereses</legend>
+
+<input type="checkbox" name="intereses[]" value="cultura" />
+Cultura &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input type="checkbox" name="intereses[]" value="sociales" />
+Sociales &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input type="checkbox" name="intereses[]" value="deporte" />
+Deporte &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input type="checkbox" name="intereses[]" value="ciencia" />
+Ciencia &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input type="checkbox" name="intereses[]" value="diversion" />
+Diversion
+<br />
+
+</fieldset>
+
+<br />
+
+<label for="comentarios">Comentarios</label>
+<br />
+<textarea id="comentarios" name="comentarios" placeholder="Escriba aqui su comentario" rows="7" cols="60" ></textarea>
+
+<br />
+<button type="submit">Enviar</button>			
+<button type="reset">Limpiar</button>	
+
+<br /><br />
+
+</form>
+
+</body>
+</html>

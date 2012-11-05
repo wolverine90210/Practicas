@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	
+	<title> Selecciona usuario </title>
+	
+</head>
+
+<body>
+
+<h1>COMPLETAR REGISTRO</h1>
+
+<p><strong> Selecciona un usuario: </strong></p>
+
+
+	<form name="form" method="get" action="php/registraUsuario.php">
+		<fieldset>
+		<legend>ID del usuario</legend>	
+			
+		<label for="idusuario"><strong>Escribe el ID del usuario: </strong></label>
+		<input type="number" name="idusuario"/>
+
+		<button type="submit">Enviar</button>
+		</fieldset>
+	</form>
+
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<?php
+
+//Porque la maestra dijo
+
+session_start();
+
+//Temporal
+//var_dump($_SESSION);
+
+$nick = $_SESSION["datos"]["nick"];
+$email = $_SESSION["datos"]["email"];
+$idusuario = $_SESSION["datos"]["idusuario"];
+
+
+//Borrar los datos para que no esten en la sesión
+unset($_SESSION["datos"]);
+
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	
+	<script type="text/javascript" src="js/jsFormP6Val.js"></script>
+	
+	<!-- Scripts de JQuery y el plugin del calendario -->
+	<script type="text/javascript" src="calendario_dw/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="calendario_dw/calendario_dw.js"></script> 
+	
+	<link rel="stylesheet" type="text/css" href="css/estilos.css" />
+	
+	<!-- Hoja de estilos del calendario -->
+	<link rel="stylesheet" href="calendario_dw/calendario_dw-estilos.css" type="text/css"/>
+
+	<meta charset="UTF-8" />
+	<meta name="description" content="Practica 11 - Calendario con JS o JQuery" />
+	<meta name="keywords" content="correo, usuario, avatar, contraseña, dirección, teléfono, fecha de nacimiento, sexo, enviar, limpiar" />
+	<meta name="author" content="Iván Antonio Corona Zárate" />
+	<meta http-equiv="refresh" content="300" />
+	
+	<!-- Script Javascript que invoca el plugin jQuery para hacer que el campo de texto se convierta en un calendario.  -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".campofecha").calendarioDW();
+		})
+	</script>
+	
+	<title>Completar registro</title>
+	
+</head>
+<body>
+
+<h1>COMPLETAR REGISTRO</h1>
+
+<p><strong>Complete su registro llenando los campos a continuación y pulsando el botón [Enviar].</strong></p>
+
+
+<form name="form2" method="get" action="php/agregaBD.php" enctype="multipart/form-data">
+
+<input type="hidden" id="idusuario" name="idusuario" value="<?= $idusuario; ?>"/>
+ 
+<!-- Datos ya registrados (inhabilitados) -->
+
+
+<br />
+
+<fieldset>
+<legend>Datos registrados</legend><p></p>
+
+<strong><label for="usuario">Nombre de usuario: </label></strong>
+<input type="text" id="usuario" name="usuario" value="<?= $nick; ?>" disabled />
+
+<br /><br />
+<strong><label for="email">Correo electrónico: </label></strong>
+<input type="email" id="email" name="email" value="<?= $email; ?>" disabled />
+
+</fieldset>
+
+<br /><br />
+
+
+<!-- Razones de registro en checkboxes -->
+
+
+<fieldset>
+<legend>Razones de registro</legend>
+
+<p><strong>Razones por las cuales se está registrando en nuestra página:</strong></p>
+
+<input type="checkbox" id="c1" name="razones[]" value="anuncio" />
+Recomendación de un amigo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input type="checkbox" id="c2" name="razones[]" value="recomendacion" />
+Me interesa el contenido &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input type="checkbox" id="c3" name="razones[]" value="curiosidad" />
+Curiosidad &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input type="checkbox" id="c4" name="razones[]" value="ocio" />
+Ocio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input type="checkbox" id="c5" name="razones[]" value="otra" />
+Ninguna de las anteriores
+
+<div id="error_checkBoxes" class="div_error">
+	<p>Seleccione al menos una razón de registro!</p>
+</div>
+
+</fieldset>
+
+<br /><br />
+
+
+<!-- Avatar del usuario -->
+
+<fieldset>
+<legend>Imagen de perfil</legend>
+
+<p><strong>Seleccione de entre sus archivos una imagen de perfil:</strong></p>
+<input type="file" id="imagen" name="imagen" accept="image/*" required />
+
+<div id="error_image" class="div_error">
+	<p>Seleccione una imagen de perfil! El archivo tiene que ser una imagen.</p>
+</div>
+
+</fieldset>
+
+<br /><br />
+
+
+<!-- Contraseña del usuario -->
+
+
+<fieldset>
+<legend>Contraseña</legend>
+
+<p><strong>Ingrese nuevamente su contraseña:</strong></p>
+<input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required />
+
+<div id="error_pass" class="div_error">
+	<p>Introduzca una contraseña que sea válida! Debe tener entre 8 y 15 caracteres (números, letras y/o guion bajo).</p>
+</div>
+
+</fieldset>
+
+<br /><br />
+
+
+<!-- Completar los campos para el registro -->
+
+
+<fieldset>
+<legend>Datos personales</legend><p></p>
+
+<strong><label for="nombres">Nombre(s): </label></strong>
+<input type="text" id="nombres" name="nombres" placeholder="Escriba su(s) nombre(s)" required />
+
+<div id="error_name" class="div_error">
+	<p>Debe escribir un nombre o nombres que sean válidos!</p>
+</div>
+
+<br /><br />
+
+<strong><label for="apellidos">Apellidos: </label></strong>
+<input type="text" id="apellidos" name="apellidos" placeholder="Escriba sus apellidos" required />
+
+<div id="error_lastName" class="div_error">
+	<p>Introduzca sus apellidos y que sean válidos!</p>
+</div>
+
+<br /><br />
+
+<strong><label for="direccion">Dirección: </label></strong>
+<input type="text" id="direccion" name="direccion" placeholder="Escriba su dirección" required />
+
+<div id="error_address" class="div_error">
+	<p>Introduzca una dirección y que sea válida!</p>
+</div>
+
+<br /><br />
+
+<strong><label for="telefono">Teléfono: </label></strong>
+<input type="tel" id="telefono" name="telefono" placeholder="Escriba su teléfono" required />
+
+<div id="error_tel" class="div_error">
+	<p>Introduzca un teléfono y que sea válido!</p>
+</div>
+
+<br /><br />
+
+<strong><label for="fecha" >Fecha de nacimiento: </label></strong>
+<input type="text" id="fecha" name="fecha" class="campofecha" size="12" required>
+
+<div id="error_date" class="div_error">
+	<p>Introduzca una fecha de nacimiento!</p>
+</div>
+
+<br /><br />
+
+<strong>Sexo: &nbsp;&nbsp;&nbsp;</strong>
+
+<input type="radio" id="hombre" name="sexo" value="h"/>
+Hombre &nbsp;&nbsp;&nbsp;&nbsp;
+
+<input type="radio" id="mujer" name="sexo" value="m"/>
+Mujer
+
+<div id="error_sex" class="div_error">
+	<p>Seleccione su sexo!</p>
+</div>
+
+</fieldset>
+
+<br /><br />
+
+
+<!-- Botones de enviar y limpiar campos -->
+
+
+<input type="button" value="Enviar" onClick="validaEnvio()"/>
+
+<button type="reset">Limpiar</button>
+
+<br /><br /><br />
+
+</form>
+
+
+</body>
+</html>

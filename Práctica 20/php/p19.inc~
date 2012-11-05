@@ -1,0 +1,10 @@
+<?php
+
+/*Datos necesarios para la conexión al servidor de mysql*/
+
+$host= 'localhost';
+$bd = 'ensayo';
+$user = 'root';
+$pass = '1234';
+
+?>
